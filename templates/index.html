@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Blog Home</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="static\logo.png"></img></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li> 
+                <li><a href="{{ url_for('article', article_id=1) }}">Article</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="article-list">
+            <!-- Display a list of articles here -->
+            {% for article in articles %}
+            <article class="article-card">
+                <a href="{{ url_for('article', article_id=article.Id) }}"> <!-- Updated the key to "Id" -->
+                    <img src="static\mahi.jpg" alt="Article 1 Image">
+                    <h2 class="article-title">{{ article.Title }}</h2> <!-- Updated the key to "Title" -->
+                    <p class="article-description">{{ article.Content }}</p> <!-- Updated the key to "Content" -->
+                    <span class="btn-read-more">Read More</span>
+                </a>
+            </article>
+
+            <article class="article-card">
+                <a href="{{ url_for('article', article_id=article.Id) }}"> <!-- Updated the key to "Id" -->
+                    <img src="static\mahi.jpg" alt="Article 1 Image">
+                    <h2 class="article-title">{{ article.Title }}</h2> <!-- Updated the key to "Title" -->
+                    <p class="article-description">{{ article.Content }}</p> <!-- Updated the key to "Content" -->
+                    <span class="btn-read-more">Read More</span>
+                </a>
+            </article>
+            {% endfor %}
+
+            
+            <!-- Add more article cards here -->
+        </section>
+    </main>
+</body>
+
+</html>

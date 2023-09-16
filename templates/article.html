@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Article Title</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Article</a></li>
+                <!-- Add more navigation links here -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="article">
+            <h1>{{ article.Title }}</h1> <!-- Updated the key to "Title" -->
+            <img src="static\mahi.jpg" alt="Article 1 Image">
+            <p>{{ article.Content }}</p> <!-- Updated the key to "Content" -->
+        </section>
+    </main>
+</body>
+
+</html>
